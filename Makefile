@@ -1,4 +1,5 @@
-SRCS=\
+SRCS=srcs/ft_is_tab_of_number.c\
+srcs/ft_linked_list_constructor.c\
 
 
 LIBFT_INCLUDES=./libft/includes

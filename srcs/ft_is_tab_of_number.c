@@ -1,35 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_is_tab_of_number.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 13:26:17 by nhan              #+#    #+#             */
-/*   Updated: 2024/02/24 16:05:21 by nhan             ###   ########.fr       */
+/*   Created: 2024/02/24 14:25:45 by nhan              #+#    #+#             */
+/*   Updated: 2024/02/24 15:27:51 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	ft_is_tab_of_number(char **str, int len)
 {
-	t_ps	*list_a;
+	int	i;
+	int	j;
 
-	if (argv == NULL)
+	if (!str)
+		return (0);
+	i = 0;
+	while (i < len)
 	{
-		ft_printf("argv is NULL");
-		return (1);
+		j = 0;
+		if (!str[i])
+		{
+			ft_printf("Error => NULL pointer in argv");
+			return (0);
+		}
+		while (str[i][j])
+		{
+			if (ft_isdigit(str[i][j]) == 0)
+			{
+				int c = (int)str[i][j];
+				ft_printf("Error %d - %d => \"%s\" : IS NOT DIGIT", ft_isdigit(str[i][j]), c, str[i]);
+				return (0);
+			}
+			j++;
+		}
+		i++;
 	}
-	if (argc < 2)
-	{
-		ft_printf("please enter at least one number");
-		return (1);
-	}
-	if (!ft_is_tab_of_number(argv + 1, argc - 1))
-		return (1);
-	ft_printf("Pass through test\n");
-	list_a = ft_linked_list_constructor(argv + 1, argc - 1);
-	(void)list_a;
-	return (0);
+	return (1);
 }
