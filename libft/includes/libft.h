@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:21:47 by nhan              #+#    #+#             */
-/*   Updated: 2024/02/24 11:37:51 by nhan             ###   ########.fr       */
+/*   Updated: 2024/02/24 13:08:33 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # include <unistd.h>
 # include <limits.h>
 # include <fcntl.h>
+# include "ft_printf.h"
+# include "get_next_line.h"
 
 //structure
 typedef struct s_list

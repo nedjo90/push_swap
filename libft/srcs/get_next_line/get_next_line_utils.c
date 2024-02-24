@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:30:47 by nhan              #+#    #+#             */
-/*   Updated: 2024/02/24 11:44:09 by nhan             ###   ########.fr       */
+/*   Updated: 2024/02/24 13:32:51 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,6 @@ char	*free_tab_str(char **str)
 	free(*str);
 	*str = NULL;
 	return (NULL);
-}
-
-size_t	ft_strlen(char const *str)
-{
-	size_t	i;
-
-	if (!str)
-		return (0);
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
 }
 
 char	*clean_tab_str(char *tab_str)
@@ -52,31 +40,4 @@ char	*clean_tab_str(char *tab_str)
 	if (!new_tab_str)
 		return (NULL);
 	return (new_tab_str);
-}
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	unsigned int	i;
-	char			*str;
-
-	if (!s)
-		return (0);
-	i = 0;
-	if (start > ft_strlen(s))
-	{
-		str = malloc(sizeof(char) * 1);
-		if (!str)
-			return (NULL);
-		str[0] = '\0';
-		return (str);
-	}
-	if (ft_strlen(s) - start < len)
-		len = ft_strlen(s) - start;
-	str = malloc (sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	while (start < ft_strlen(s) && i < len && s[start])
-		str[i++] = s[start++];
-	str[i] = '\0';
-	return (str);
 }

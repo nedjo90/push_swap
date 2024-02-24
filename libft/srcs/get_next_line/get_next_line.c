@@ -6,54 +6,11 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:31:52 by nhan              #+#    #+#             */
-/*   Updated: 2024/02/24 11:43:56 by nhan             ###   ########.fr       */
+/*   Updated: 2024/02/24 13:34:31 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h" 
-
-char	*ft_strjoin(char *s1, char *s2)
-{
-	size_t	i;
-	size_t	j;
-	char	*join;
-
-	if (!s1)
-	{
-		s1 = malloc(1 + sizeof(char));
-		if (!s1)
-			return (NULL);
-		s1[0] = 0;
-	}
-	join = (char *) malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (!join)
-		return (free_tab_str(&s1));
-	i = -1;
-	j = -1;
-	while (s1[++i])
-		join[i] = s1[i];
-	while (s2[++j])
-		join[i + j] = s2[j];
-	join[i + j] = '\0';
-	free(s1);
-	return (join);
-}
-
-char	*ft_strchr(char *s, int c)
-{
-	int		i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == (char)c)
-			return (&((char *)s)[i]);
-		i++;
-	}
-	if ((char)c == '\0')
-		return (&((char *)s)[i]);
-	return (0);
-}
 
 char	*print_line(char *tab_str)
 {
