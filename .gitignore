@@ -33,3 +33,4 @@
 *.swp
 .DS_Store
 *.dSYM
+.vscode

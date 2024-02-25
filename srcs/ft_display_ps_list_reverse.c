@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_linked_list_constructor.c                       :+:      :+:    :+:   */
+/*   ft_display_ps_list_reverse.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 15:31:13 by nhan              #+#    #+#             */
-/*   Updated: 2024/02/25 12:43:30 by nhan             ###   ########.fr       */
+/*   Created: 2024/02/25 11:49:06 by nhan              #+#    #+#             */
+/*   Updated: 2024/02/25 12:13:16 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_ps	*ft_linked_list_constructor(char **str, int len)
+void	ft_display_ps_list_reverse(t_ps *list)
 {
-	int			i;
-	int			number;
-	t_ps		*list;
+	t_ps	tracker;
 
-	if (!len || !str)
-		return (NULL);
-	list = NULL;
-	i = 0;
-	while (i < len)
+	ft_printf("************************ reverse list ********************\n");
+	tracker = *(list->previous);
+	while (tracker.index != 0)
 	{
-		if (!str[i])
-			return (ft_free_ps_list(&list));
-		number = ft_atoi(str[i]);
-		if (ft_add_ps(&list, ft_new_ps(number)) == NULL)
-			return (NULL);
-		i++;
+		ft_display_ps(&tracker);
+		tracker = *(tracker.previous);
 	}
-	return (list);
+	ft_display_ps(&tracker);
+	ft_printf("************************ reverse list ********************\n");
 }

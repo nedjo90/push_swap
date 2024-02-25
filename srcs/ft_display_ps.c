@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_linked_list_constructor.c                       :+:      :+:    :+:   */
+/*   ft_display_ps.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 15:31:13 by nhan              #+#    #+#             */
-/*   Updated: 2024/02/25 12:43:30 by nhan             ###   ########.fr       */
+/*   Created: 2024/02/25 11:42:43 by nhan              #+#    #+#             */
+/*   Updated: 2024/02/25 12:14:53 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_ps	*ft_linked_list_constructor(char **str, int len)
+void	ft_display_ps(t_ps *ps)
 {
-	int			i;
-	int			number;
-	t_ps		*list;
-
-	if (!len || !str)
-		return (NULL);
-	list = NULL;
-	i = 0;
-	while (i < len)
-	{
-		if (!str[i])
-			return (ft_free_ps_list(&list));
-		number = ft_atoi(str[i]);
-		if (ft_add_ps(&list, ft_new_ps(number)) == NULL)
-			return (NULL);
-		i++;
-	}
-	return (list);
+	ft_printf("Index = %d\t\t", ps->index);
+	ft_printf("Value = %d\t\t", ps->value);
+	ft_printf("|\033[0;31m P = %p\t\t", ps->previous);
+	ft_printf("\033[0;32m A = %p\t\t", ps);
+	ft_printf("\033[0;33m N = %p\033[0m\n", ps->next);
 }

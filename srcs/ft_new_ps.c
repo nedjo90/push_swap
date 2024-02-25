@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_linked_list_constructor.c                       :+:      :+:    :+:   */
+/*   ft_new_ps.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 15:31:13 by nhan              #+#    #+#             */
-/*   Updated: 2024/02/25 12:43:30 by nhan             ###   ########.fr       */
+/*   Created: 2024/02/25 11:26:11 by nhan              #+#    #+#             */
+/*   Updated: 2024/02/25 13:52:39 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_ps	*ft_linked_list_constructor(char **str, int len)
+t_ps	*ft_new_ps(int n)
 {
-	int			i;
-	int			number;
-	t_ps		*list;
+	t_ps	*new;
 
-	if (!len || !str)
+	new = malloc(sizeof(t_ps));
+	if (!new)
 		return (NULL);
-	list = NULL;
-	i = 0;
-	while (i < len)
-	{
-		if (!str[i])
-			return (ft_free_ps_list(&list));
-		number = ft_atoi(str[i]);
-		if (ft_add_ps(&list, ft_new_ps(number)) == NULL)
-			return (NULL);
-		i++;
-	}
-	return (list);
+	new->value = n;
+	new->index = 0;
+	new->next = new;
+	new->previous = new;
+	return (new);
 }

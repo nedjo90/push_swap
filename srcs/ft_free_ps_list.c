@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_linked_list_constructor.c                       :+:      :+:    :+:   */
+/*   ft_free_ps_list.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 15:31:13 by nhan              #+#    #+#             */
-/*   Updated: 2024/02/25 12:43:30 by nhan             ###   ########.fr       */
+/*   Created: 2024/02/25 12:34:17 by nhan              #+#    #+#             */
+/*   Updated: 2024/02/25 14:34:55 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_ps	*ft_linked_list_constructor(char **str, int len)
+t_ps	*ft_free_ps_list(t_ps **list)
 {
-	int			i;
-	int			number;
-	t_ps		*list;
+	t_ps	*temp;
+	int 			last_index;
 
-	if (!len || !str)
+	if (!list || !(*list))
 		return (NULL);
-	list = NULL;
-	i = 0;
-	while (i < len)
+	last_index = (*list)->previous->index;
+	temp = (*list);
+	while (temp->index != last_index)
 	{
-		if (!str[i])
-			return (ft_free_ps_list(&list));
-		number = ft_atoi(str[i]);
-		if (ft_add_ps(&list, ft_new_ps(number)) == NULL)
-			return (NULL);
-		i++;
+		temp = (*list)->next;
+		free((*list));
+		*list = temp;
 	}
-	return (list);
+	free((*list));
+	return (NULL);
 }

@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_tab_of_number.c                              :+:      :+:    :+:   */
+/*   ft_add_ps.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 14:25:45 by nhan              #+#    #+#             */
-/*   Updated: 2024/02/25 11:35:55 by nhan             ###   ########.fr       */
+/*   Created: 2024/02/25 11:55:49 by nhan              #+#    #+#             */
+/*   Updated: 2024/02/25 12:39:56 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_is_tab_of_number(char **str, int len)
+t_ps	*ft_add_ps(t_ps **first, t_ps *new)
 {
-	int	i;
-	int	j;
-
-	if (!str)
-		return (0);
-	i = 0;
-	while (i < len)
+	if (new == NULL)
+		return (ft_free_ps_list(first));
+	if (*first == NULL)
+		*first = new;
+	else
 	{
-		j = 0;
-		if (!str[i])
+		new->next = (*first);
+		if ((*first)->previous->index == 0)
 		{
-			ft_printf("Error => NULL pointer in argv");
-			return (0);
+			new->previous = *first;
+			new->index = 1;
+			new->next->next = new;
 		}
-		while (str[i][j])
+		else
 		{
-			if (ft_isdigit(str[i][j]) == 0)
-				return (0);
-			j++;
+			new->previous = (*first)->previous;
+			new->index = (*first)->previous->index + 1;
+			(*first)->previous->next = new;
 		}
-		i++;
+		(*first)->previous = new;
 	}
-	return (1);
+	return (new->next);
 }
