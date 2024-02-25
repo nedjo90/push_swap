@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 13:26:17 by nhan              #+#    #+#             */
-/*   Updated: 2024/02/24 16:05:21 by nhan             ###   ########.fr       */
+/*   Updated: 2024/02/25 01:08:38 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 	}
 	if (!ft_is_tab_of_number(argv + 1, argc - 1))
 		return (1);
-	ft_printf("Pass through test\n");
+	ft_printf("Pass through\n");
 	list_a = ft_linked_list_constructor(argv + 1, argc - 1);
 	(void)list_a;
 	return (0);

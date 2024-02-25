@@ -20,7 +20,7 @@ $(NAME): $(OBJS)
 	make -C ./libft
 	mv libft/libft.a $(LIB)
 	$(AR) $(LIB) $^
-	$(CC) $(CFLAGS) $(CPPFLAGS) $(LIB) push_swap.c -o $(NAME)
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(LIB) push_swap.c -o $(NAME) -g
 
 clean:
 	make clean -C ./libft
