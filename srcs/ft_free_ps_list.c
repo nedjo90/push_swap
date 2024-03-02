@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 12:34:17 by nhan              #+#    #+#             */
-/*   Updated: 2024/02/25 14:34:55 by nhan             ###   ########.fr       */
+/*   Updated: 2024/03/02 12:05:41 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_ps	*ft_free_ps_list(t_ps **list)
 {
+	int		last_index;
 	t_ps	*temp;
-	int 			last_index;
 
 	if (!list || !(*list))
 		return (NULL);

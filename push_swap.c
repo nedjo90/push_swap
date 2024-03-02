@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 13:26:17 by nhan              #+#    #+#             */
-/*   Updated: 2024/02/25 15:10:20 by nhan             ###   ########.fr       */
+/*   Updated: 2024/03/02 11:57:47 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ int	main(int argc, char **argv)
 		ft_printf("Error");
 		return (1);
 	}
-	//ft_display_ps_list(list_a);
+	ft_display_ps_list(list_a);
 	ft_free_ps_list(&list_a);
-
 	return (0);
 }
