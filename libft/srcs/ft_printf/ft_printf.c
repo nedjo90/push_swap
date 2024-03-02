@@ -24,7 +24,7 @@ static int	ft_print_parser(const char *fmt, va_list args)
 		if (ft_conversion_symbol(fmt))
 		{
 			fmt++;
-			size = ft_print_conversion(fmt++, &args);
+			size = ft_print_conversion(fmt++, args);
 		}
 		else
 		{

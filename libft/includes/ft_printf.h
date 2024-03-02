@@ -23,7 +23,7 @@
 int	ft_printf(const char *fmt, ...);
 int	ft_conversion_symbol(const char *haystack);
 int	ft_print_char(int c);
-int	ft_print_conversion(const char *fmt, va_list *args);
+int	ft_print_conversion(const char *fmt, va_list args);
 int	ft_print_integer(int number);
 int	ft_print_percent(char c);
 int	ft_print_str(char *str);

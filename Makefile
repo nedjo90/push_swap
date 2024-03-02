@@ -12,7 +12,7 @@ LIBFT_INCLUDES=./libft/includes
 PUSH_SWAP_INCLUDES=./includes
 
 CC=gcc
-CFLAGS=-Wall -Wextra -Werror -pedantic -g
+CFLAGS=-Wall -Wextra -Werror
 OBJS=$(SRCS:.c=.o)
 CPPFLAGS= -I $(PUSH_SWAP_INCLUDES) -I $(LIBFT_INCLUDES)
 AR=ar rcs
@@ -26,9 +26,8 @@ $(NAME): $(OBJS)
 	make -C ./libft
 	mv libft/libft.a $(LIB)
 	$(AR) $(LIB) $^
-	$(CC) $(CFLAGS) $(CPPFLAGS) $(LIB) push_swap.c -o $(NAME)
-	./push_swap.out 1 2 3 4
-
+	$(CC) $(CFLAGS) push_swap.c -o $(NAME) -I $(PUSH_SWAP_INCLUDES) -I $(LIBFT_INCLUDES) $(LIB)
+	valgrind --leak-check=yes ./$(NAME) 1 2 3 4
 clean:
 	make clean -C ./libft
 	$(RM) $(OBJS)

@@ -12,21 +12,21 @@
 
 #include "ft_printf.h"
 
-int	ft_print_conversion(const char *fmt, va_list *args)
+int	ft_print_conversion(const char *fmt, va_list args)
 {
 	if (*fmt == '%')
 		return (ft_print_percent(*fmt));
 	else if (*fmt == 'c')
-		return (ft_print_char(va_arg(*args, int)));
+		return (ft_print_char(va_arg(args, int)));
 	else if (*fmt == 's')
-		return (ft_print_str(va_arg(*args, char *)));
+		return (ft_print_str(va_arg(args, char *)));
 	else if (*fmt == 'i' || *fmt == 'd')
-		return (ft_print_integer(va_arg(*args, int)));
+		return (ft_print_integer(va_arg(args, int)));
 	else if (*fmt == 'p')
-		return (ft_print_pointer(va_arg(*args, unsigned long)));
+		return (ft_print_pointer(va_arg(args, unsigned long)));
 	else if (*fmt == 'u')
-		return (ft_print_unsigned(va_arg(*args, unsigned int)));
+		return (ft_print_unsigned(va_arg(args, unsigned int)));
 	else if (*fmt == 'x' || *fmt == 'X')
-		return (ft_print_hexa(va_arg(*args, unsigned int), *fmt));
+		return (ft_print_hexa(va_arg(args, unsigned int), *fmt));
 	return (-1);
 }
