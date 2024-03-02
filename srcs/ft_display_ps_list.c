@@ -16,7 +16,7 @@ void	ft_display_ps_list(t_ps *list)
 {
 	t_ps	tracker;
 
-	ft_printf("********************************************* list ******************************************\n");
+	ft_printf("******************** list ******************************\n");
 	tracker = *list;
 	ft_display_ps(&tracker);
 	tracker = *(tracker.next);
@@ -25,5 +25,5 @@ void	ft_display_ps_list(t_ps *list)
 		ft_display_ps(&tracker);
 		tracker = *(tracker.next);
 	}
-	ft_printf("********************************************* list ******************************************\n");
+	ft_printf("******************** list ******************************\n");
 }

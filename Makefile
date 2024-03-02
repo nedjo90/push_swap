@@ -26,9 +26,8 @@ $(NAME): $(OBJS)
 	make -C ./libft
 	mv libft/libft.a $(LIB)
 	$(AR) $(LIB) $^
-	$(CC) $(CFLAGS) push_swap.c -o $(NAME) -I $(PUSH_SWAP_INCLUDES) -I $(LIBFT_INCLUDES) $(LIB)
-	export MallocStackLogging=1
-	./push_swap.out 1 2 3 4	
+	$(CC) $(CFLAGS) push_swap.c -o $(NAME) -I $(PUSH_SWAP_INCLUDES) -I $(LIBFT_INCLUDES) $(LIB) -g
+	valgrind --leak-check=yes ./push_swap.out 1 2 3 4	
 # ./push_swap_tester.sh
 # leaks --atExit -- ./$(NAME) 1 2 3 4
 clean:

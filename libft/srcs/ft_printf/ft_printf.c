@@ -25,7 +25,6 @@ static int	ft_print_parser(const char *fmt, va_list args)
 		{
 			fmt++;
 			size = ft_print_conversion(fmt++, args);
-			args++;
 		}
 		else
 		{
