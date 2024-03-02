@@ -7,6 +7,7 @@ srcs/ft_display_ps_list.c\
 srcs/ft_add_ps.c\
 srcs/ft_free_ps_list.c\
 srcs/ft_malloc_null_tester.c\
+srcs/ft_sa.c\
 
 LIBFT_INCLUDES=./libft/includes
 PUSH_SWAP_INCLUDES=./includes
