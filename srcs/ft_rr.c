@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ss.c                                            :+:      :+:    :+:   */
+/*   ft_rr.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/02 23:59:21 by nhan              #+#    #+#             */
-/*   Updated: 2024/03/03 01:34:10 by nhan             ###   ########.fr       */
+/*   Created: 2024/03/03 01:29:33 by nhan              #+#    #+#             */
+/*   Updated: 2024/03/03 01:37:47 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_ss(t_ps **list_a, t_ps **list_b)
+void	ft_rr(t_ps **list_a, t_ps **list_b)
 {
 	if (*list_a && *list_b)
 	{
-		ft_swap_head(list_a);
-		ft_swap_head(list_b);
-		write(1, "ss\n", 3);
+		ft_rotate(list_a);
+		ft_rotate(list_b);
+		write(1, "rr\n", 3);
 	}
 }

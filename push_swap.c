@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 13:26:17 by nhan              #+#    #+#             */
-/*   Updated: 2024/03/03 01:07:03 by nhan             ###   ########.fr       */
+/*   Updated: 2024/03/03 01:36:22 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ int	main(int argc, char **argv)
 	if (!list_a || ft_duplicate(*list_a))
 		return (ft_error());
 	ft_pb(&list_a, &list_b);
-	ft_pa(&list_a, &list_b);
+	ft_pb(&list_a, &list_b);
+	ft_rr(&list_a, &list_b);
 	ft_display_ps_list(list_a);
 	ft_display_ps_list(list_b);
 	ft_free_ps_list(&list_a);
