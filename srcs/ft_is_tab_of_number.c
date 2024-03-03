@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 14:25:45 by nhan              #+#    #+#             */
-/*   Updated: 2024/02/25 11:35:55 by nhan             ###   ########.fr       */
+/*   Updated: 2024/03/03 18:19:00 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	ft_is_tab_of_number(char **str, int len)
 		}
 		while (str[i][j])
 		{
+			if (j == 0 && str[i][j] == '-')
+				j++;
 			if (ft_isdigit(str[i][j]) == 0)
 				return (0);
 			j++;

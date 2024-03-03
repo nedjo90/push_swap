@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 12:22:42 by nhan              #+#    #+#             */
-/*   Updated: 2024/03/03 02:23:32 by nhan             ###   ########.fr       */
+/*   Updated: 2024/03/03 18:36:36 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,15 @@ typedef struct s_ps
 {
 	int			value;
 	int			index;
+	int			expected_index;
+	int			cost;
 	struct s_ps	*next;
 	struct s_ps	*previous;
 }	t_ps;
 
-void	ft_display_ps(t_ps *ps);
-void	ft_display_ps_list_reverse(t_ps *list);
-void	ft_display_ps_list(t_ps *list);
+void	ft_display_ps(t_ps **ps);
+void	ft_display_ps_list_reverse(t_ps **list);
+void	ft_display_ps_list(t_ps **list);
 void	*ft_malloc_null_tester(size_t size);
 t_ps	*ft_add_ps(t_ps **first, t_ps *new);
 t_ps	*ft_linked_list_constructor(char **str, int len);
@@ -49,5 +51,6 @@ void	ft_rra(t_ps **list_a);
 void	ft_rrb(t_ps **list_b);
 void	ft_rr(t_ps **list_a, t_ps **list_b);
 void	ft_rrr(t_ps **list_a, t_ps **list_b);
+int		ft_indexer(t_ps **list);
 int		ft_is_tab_of_number(char **str, int len);
 #endif

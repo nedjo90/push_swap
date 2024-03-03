@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 13:26:17 by nhan              #+#    #+#             */
-/*   Updated: 2024/03/03 02:24:31 by nhan             ###   ########.fr       */
+/*   Updated: 2024/03/03 18:32:07 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,10 @@ int	ft_duplicate(t_ps s)
 		while (checking.index != 0)
 		{
 			if (s.value == checking.value)
+			{
+				ft_printf("double");
 				return (1);
+			}
 			checking = *(checking.next);
 		}
 		s = *(s.next);
@@ -54,14 +57,13 @@ int	main(int argc, char **argv)
 	list_b = NULL;
 	if (!ft_check_input(argc, argv))
 		return (ft_error());
+	ft_printf("ici");
 	list_a = ft_linked_list_constructor(argv + 1, argc - 1);
 	if (!list_a || ft_duplicate(*list_a))
 		return (ft_error());
-	ft_pb(&list_a, &list_b);
-	ft_pb(&list_a, &list_b);
-	ft_rrr(&list_a, &list_b);
-	ft_display_ps_list(list_a);
-	ft_display_ps_list(list_b);
+	ft_indexer(&list_a);
+	ft_display_ps_list(&list_a);
+	ft_display_ps_list(&list_b);
 	ft_free_ps_list(&list_a);
 	ft_free_ps_list(&list_b);
 	return (0);

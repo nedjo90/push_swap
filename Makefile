@@ -23,6 +23,7 @@ srcs/ft_rr.c\
 srcs/ft_rrr.c\
 srcs/ft_rra.c\
 srcs/ft_rrb.c\
+srcs/ft_indexer.c\
 
 LIBFT_INCLUDES=./libft/includes
 PUSH_SWAP_INCLUDES=./includes
