@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_display_ps_list.c                               :+:      :+:    :+:   */
+/*   ft_ss.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/25 11:52:38 by nhan              #+#    #+#             */
-/*   Updated: 2024/03/03 01:05:14 by nhan             ###   ########.fr       */
+/*   Created: 2024/03/02 23:59:21 by nhan              #+#    #+#             */
+/*   Updated: 2024/03/03 00:12:16 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_display_ps_list(t_ps *list)
+void	ft_ss(t_ps **list_a, t_ps **list_b)
 {
-	t_ps	tracker;
-
-	if (list == NULL)
+	if (!*list_a && !*list_b)
 		return ;
-	ft_printf("******************** list ******************************\n");
-	tracker = *list;
-	ft_display_ps(&tracker);
-	tracker = *(tracker.next);
-	while (tracker.index != 0)
-	{
-		ft_display_ps(&tracker);
-		tracker = *(tracker.next);
-	}
-	ft_printf("******************** list ******************************\n");
+	ft_swap_head(list_a);
+	ft_swap_head(list_b);
+	write(1, "ss\n", 3);
 }

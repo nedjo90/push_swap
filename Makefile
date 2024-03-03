@@ -7,7 +7,14 @@ srcs/ft_display_ps_list.c\
 srcs/ft_add_ps.c\
 srcs/ft_free_ps_list.c\
 srcs/ft_malloc_null_tester.c\
+srcs/ft_swap_head.c\
 srcs/ft_sa.c\
+srcs/ft_sb.c\
+srcs/ft_ss.c\
+srcs/ft_pb.c\
+srcs/ft_pa.c\
+srcs/ft_add_front.c\
+srcs/ft_del_first.c\
 
 LIBFT_INCLUDES=./libft/includes
 PUSH_SWAP_INCLUDES=./includes
@@ -28,7 +35,7 @@ $(NAME): $(OBJS)
 	mv libft/libft.a $(LIB)
 	$(AR) $(LIB) $^
 	$(CC) $(CFLAGS) push_swap.c -o $(NAME) -I $(PUSH_SWAP_INCLUDES) -I $(LIBFT_INCLUDES) $(LIB) -g
-	valgrind --leak-check=yes ./push_swap.out 1 2 3 4	
+	valgrind --leak-check=full --show-leak-kinds=all -s ./push_swap.out 1 2 3 4	
 # ./push_swap_tester.sh
 # leaks --atExit -- ./$(NAME) 1 2 3 4
 clean:

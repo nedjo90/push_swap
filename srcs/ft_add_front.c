@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_display_ps_list.c                               :+:      :+:    :+:   */
+/*   ft_add_front.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/25 11:52:38 by nhan              #+#    #+#             */
-/*   Updated: 2024/03/03 01:05:14 by nhan             ###   ########.fr       */
+/*   Created: 2024/03/03 00:17:00 by nhan              #+#    #+#             */
+/*   Updated: 2024/03/03 00:47:31 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_display_ps_list(t_ps *list)
+void	ft_add_front(t_ps **list, t_ps *ps)
 {
-	t_ps	tracker;
-
-	if (list == NULL)
+	if (!ps || !list)
 		return ;
-	ft_printf("******************** list ******************************\n");
-	tracker = *list;
-	ft_display_ps(&tracker);
-	tracker = *(tracker.next);
-	while (tracker.index != 0)
+	if (!*list)
+		*list = ps;
+	else
 	{
-		ft_display_ps(&tracker);
-		tracker = *(tracker.next);
+		ps->next = (*list);
+		ps->previous = (*list)->previous;
+		ps->index = 0;
+		(*list)->previous->next = ps;
+		(*list)->previous = ps;
+		(*list)->index += 1;
+		(*list) = (*list)->next;
+		while ((*list)->index != 0)
+		{
+			(*list)->index += 1;
+			(*list) = (*list)->next;
+		}
 	}
-	ft_printf("******************** list ******************************\n");
 }

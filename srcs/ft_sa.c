@@ -5,27 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/02 23:11:50 by nhan              #+#    #+#             */
-/*   Updated: 2024/03/02 23:32:56 by nhan             ###   ########.fr       */
+/*   Created: 2024/03/02 23:59:21 by nhan              #+#    #+#             */
+/*   Updated: 2024/03/03 00:11:17 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_ps	*ft_sa(t_ps *list)
+void	ft_sa(t_ps **list_a)
 {
-	t_ps	*first;
-
-	if (!list || list->next->index == 0)
-		return list;
-	first = list->next;
-	list->next = first->next;
-	first->next->previous = list;
-	first->previous = list->previous;
-	first->next = list;
-	list->previous->next = first;
-	list->previous = first;
-	first->index = 0;
-	list->index = 1;
-	return (first);
+	if (!*list_a)
+		return ;
+	ft_swap_head(list_a);
+	write(1, "sa\n", 3);
 }

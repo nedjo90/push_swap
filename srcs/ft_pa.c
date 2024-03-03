@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_display_ps_list.c                               :+:      :+:    :+:   */
+/*   ft_pa.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/25 11:52:38 by nhan              #+#    #+#             */
-/*   Updated: 2024/03/03 01:05:14 by nhan             ###   ########.fr       */
+/*   Created: 2024/03/03 00:12:37 by nhan              #+#    #+#             */
+/*   Updated: 2024/03/03 00:54:08 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_display_ps_list(t_ps *list)
+void	ft_pa(t_ps **list_a, t_ps **list_b)
 {
-	t_ps	tracker;
+	t_ps	*ps_push;
 
-	if (list == NULL)
+	if (!list_b || !*list_b || !list_a)
 		return ;
-	ft_printf("******************** list ******************************\n");
-	tracker = *list;
-	ft_display_ps(&tracker);
-	tracker = *(tracker.next);
-	while (tracker.index != 0)
-	{
-		ft_display_ps(&tracker);
-		tracker = *(tracker.next);
-	}
-	ft_printf("******************** list ******************************\n");
+	ps_push = ft_del_first(list_b);
+	ft_add_front(list_a, ps_push);
+	write(1, "pa\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 12:22:42 by nhan              #+#    #+#             */
-/*   Updated: 2024/03/02 23:32:23 by nhan             ###   ########.fr       */
+/*   Updated: 2024/03/03 00:53:23 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,13 @@ t_ps	*ft_add_ps(t_ps **first, t_ps *new);
 t_ps	*ft_linked_list_constructor(char **str, int len);
 t_ps	*ft_new_ps(int n);
 t_ps	*ft_free_ps_list(t_ps **list);
-t_ps	*ft_sa(t_ps *list);
+t_ps	*ft_del_first(t_ps **list);
+void	ft_swap_head(t_ps **list);
+void	ft_sa(t_ps **list_a);
+void	ft_sb(t_ps **list_b);
+void	ft_ss(t_ps **list_a, t_ps **list_b);
+void	ft_pb(t_ps **list_a, t_ps **list_b);
+void	ft_pa(t_ps **list_a, t_ps **list_b);
+void	ft_add_front(t_ps **list, t_ps *ps);
 int		ft_is_tab_of_number(char **str, int len);
 #endif

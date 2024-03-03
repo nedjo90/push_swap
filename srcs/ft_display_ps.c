@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 11:42:43 by nhan              #+#    #+#             */
-/*   Updated: 2024/02/25 12:14:53 by nhan             ###   ########.fr       */
+/*   Updated: 2024/03/03 01:05:34 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_display_ps(t_ps *ps)
 {
+	if (ps == NULL)
+		return ;
 	ft_printf("Index = %d\t\t", ps->index);
 	ft_printf("Value = %d\t\t", ps->value);
 	ft_printf("|\033[0;31m P = %p\t\t", ps->previous);
