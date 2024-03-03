@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 12:22:42 by nhan              #+#    #+#             */
-/*   Updated: 2024/03/03 01:37:16 by nhan             ###   ########.fr       */
+/*   Updated: 2024/03/03 02:23:32 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,12 @@ void	ft_pb(t_ps **list_a, t_ps **list_b);
 void	ft_pa(t_ps **list_a, t_ps **list_b);
 void	ft_add_front(t_ps **list, t_ps *ps);
 void	ft_rotate(t_ps **list);
+void	ft_reverse_rotate(t_ps **list);
 void	ft_ra(t_ps **list_a);
 void	ft_rb(t_ps **list_b);
+void	ft_rra(t_ps **list_a);
+void	ft_rrb(t_ps **list_b);
 void	ft_rr(t_ps **list_a, t_ps **list_b);
+void	ft_rrr(t_ps **list_a, t_ps **list_b);
 int		ft_is_tab_of_number(char **str, int len);
 #endif

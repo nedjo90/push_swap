@@ -16,9 +16,13 @@ srcs/ft_pa.c\
 srcs/ft_add_front.c\
 srcs/ft_del_first.c\
 srcs/ft_rotate.c\
+srcs/ft_reverse_rotate.c\
 srcs/ft_ra.c\
 srcs/ft_rb.c\
 srcs/ft_rr.c\
+srcs/ft_rrr.c\
+srcs/ft_rra.c\
+srcs/ft_rrb.c\
 
 LIBFT_INCLUDES=./libft/includes
 PUSH_SWAP_INCLUDES=./includes
