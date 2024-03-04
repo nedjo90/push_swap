@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 12:22:42 by nhan              #+#    #+#             */
-/*   Updated: 2024/03/03 18:36:36 by nhan             ###   ########.fr       */
+/*   Updated: 2024/03/04 15:37:53 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,9 @@ void	ft_rra(t_ps **list_a);
 void	ft_rrb(t_ps **list_b);
 void	ft_rr(t_ps **list_a, t_ps **list_b);
 void	ft_rrr(t_ps **list_a, t_ps **list_b);
+void	ft_sort(t_ps **list_a, t_ps **list_b);
+void	ft_display_control(t_ps **list_a, t_ps **list_b);
+void	ft_cost(t_ps **list_a, t_ps **list_b);
 int		ft_indexer(t_ps **list);
 int		ft_is_tab_of_number(char **str, int len);
 #endif
