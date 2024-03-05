@@ -6,11 +6,39 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 08:47:02 by nhan              #+#    #+#             */
-/*   Updated: 2024/03/05 16:53:59 by nhan             ###   ########.fr       */
+/*   Updated: 2024/03/05 23:17:48 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/*
+int	ft_is_min(t_ps **list,t_ps s)
+{
+	t_ps	tracker;
+	int	min;
+
+	if (!*list || !list)
+		return (1);
+	tracker = (*list);
+	min = s.value;
+	while (tracker.index != 0)
+	{
+		if (tracker.value < min)
+			min = tracker.value;
+		tracker = *(tracker.next);
+	}
+	if (min == s.value)
+		return (1);
+	return (0);
+}
+
+int	ft_cost_min(t_ps **list, t_ps s)
+{
+	t_ps	tracker;
+
+	
+}*/
 
 static int	ft_cost_to_push(t_ps **list, t_ps s)
 {
@@ -19,34 +47,30 @@ static int	ft_cost_to_push(t_ps **list, t_ps s)
 
 	if (!list || !*list)
 		return (0);
-	cost = 1;
+//	if (ft_is_min(list, s)
+//		return ft_cost_min(list, s);
+	cost = 0;
 	tracker = **list;
-	if (s.value > tracker.value)
+//	ft_printf("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
+	while (tracker.expected_index > s.expected_index)
 	{
-		while (tracker.value < s.value \
-			&& (tracker.next)->value > tracker.value)
-		{
-			cost++;
-			tracker = *(tracker.next);
-		}
+//		ft_printf("%d > %d ===> %d\n",tracker.value ,s.value, cost + 1);
+		cost++;
+		tracker = *(tracker.next);
+		if (tracker.expected_index < (tracker.previous)->expected_index)
+			break ;
+		if (tracker.index == 0)
+			break;
 	}
-	else
+	while (tracker.expected_index < s.expected_index)
 	{
-		while (tracker.value > s.value\
-			&& tracker.index != 0)
-		{
-			cost++;
-			tracker = *(tracker.next);
-		}
-		while (tracker.value < s.value\
-			&& (tracker.next)->value > tracker.value)
-		{
-			cost++;
-			tracker = *(tracker.next);
-		}
+//		ft_printf("%d < %d ===> %d\n",tracker.value ,s.value, cost + 1);
+		cost++;
+		tracker = *(tracker.next);
+		if (tracker.index == 0 || tracker.expected_index < (tracker.previous)->expected_index)
+			break;
 	}
-	if (tracker.index == 0)
-		return (0);
+//	ft_printf("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
 	return (cost);
 }
 

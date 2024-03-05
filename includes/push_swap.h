@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 12:22:42 by nhan              #+#    #+#             */
-/*   Updated: 2024/03/05 13:50:21 by nhan             ###   ########.fr       */
+/*   Updated: 2024/03/05 23:10:22 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_rr(t_ps **list_a, t_ps **list_b);
 void	ft_rrr(t_ps **list_a, t_ps **list_b);
 void	ft_sort(t_ps **list_a, t_ps **list_b);
 void	ft_display_control(t_ps **list_a, t_ps **list_b);
-void	ft_sort_three(t_ps **list_a, t_ps **list_b);
+void	ft_sort_three(t_ps **list_a);
 int	ft_is_reverse_sorted(t_ps **list);
 void	ft_reverse_order(t_ps **list_a, t_ps **list_b);
 int		ft_indexer(t_ps **list);

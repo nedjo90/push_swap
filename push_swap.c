@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 13:26:17 by nhan              #+#    #+#             */
-/*   Updated: 2024/03/03 20:24:57 by nhan             ###   ########.fr       */
+/*   Updated: 2024/03/05 23:17:12 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,15 @@ int	main(int argc, char **argv)
 	if (!list_a || ft_duplicate(*list_a))
 		return (ft_error());
 	ft_indexer(&list_a);
-	ft_display_control(&list_a, &list_b);
+//	ft_display_control(&list_a, &list_b);
 	ft_sort(&list_a, &list_b);
-	ft_display_control(&list_a, &list_b);
+//	ft_display_control(&list_a, &list_b);
+	if (ft_is_sorted(&list_a))
+		ft_printf("\n\n\n\n\n\n\n TRIER !!!!!!!!!!!!!!!!\n\n\n\n\n\n");
+	else
+	{		
+		ft_printf("\n\n\n\n\n\n\n Loooooooooser\n\n\n\n\n\n");
+	}
 	ft_free_ps_list(&list_a);
 	ft_free_ps_list(&list_b);
 	return (0);

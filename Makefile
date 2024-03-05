@@ -52,7 +52,7 @@ $(NAME): $(OBJS)
 	mv libft/libft.a $(LIB)
 	$(AR) $(LIB) $^
 	$(CC) $(CFLAGS) push_swap.c -o $(NAME) -I $(PUSH_SWAP_INCLUDES) -I $(LIBFT_INCLUDES) $(LIB) -g
-	valgrind --leak-check=full --show-leak-kinds=all -s ./push_swap.out 4 10 7 3 6 8 9 5 2 1 
+	valgrind --leak-check=full --show-leak-kinds=all -s ./push_swap.out -4 -8 0 3 4 -3 8 6 -10 -5 7 2 5 9 -2 -9 -7 -1 -6 1
 # ./push_swap_tester.sh
 # leaks --atExit -- ./$(NAME) 1 2 3 4
 clean:
