@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 12:22:42 by nhan              #+#    #+#             */
-/*   Updated: 2024/03/04 15:37:53 by nhan             ###   ########.fr       */
+/*   Updated: 2024/03/05 13:50:21 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_ps
 	int			index;
 	int			expected_index;
 	int			cost;
+	int			cost_push;
 	struct s_ps	*next;
 	struct s_ps	*previous;
 }	t_ps;
@@ -36,6 +37,7 @@ t_ps	*ft_linked_list_constructor(char **str, int len);
 t_ps	*ft_new_ps(int n);
 t_ps	*ft_free_ps_list(t_ps **list);
 t_ps	*ft_del_first(t_ps **list);
+t_ps	*ft_cost(t_ps **list_a, t_ps **list_b);
 void	ft_swap_head(t_ps **list);
 void	ft_sa(t_ps **list_a);
 void	ft_sb(t_ps **list_b);
@@ -53,7 +55,11 @@ void	ft_rr(t_ps **list_a, t_ps **list_b);
 void	ft_rrr(t_ps **list_a, t_ps **list_b);
 void	ft_sort(t_ps **list_a, t_ps **list_b);
 void	ft_display_control(t_ps **list_a, t_ps **list_b);
-void	ft_cost(t_ps **list_a, t_ps **list_b);
+void	ft_sort_three(t_ps **list_a, t_ps **list_b);
+int	ft_is_reverse_sorted(t_ps **list);
+void	ft_reverse_order(t_ps **list_a, t_ps **list_b);
 int		ft_indexer(t_ps **list);
 int		ft_is_tab_of_number(char **str, int len);
+int		ft_size_list(t_ps **list);
+int		ft_is_sorted(t_ps **list);
 #endif

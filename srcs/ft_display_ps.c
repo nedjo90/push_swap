@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 11:42:43 by nhan              #+#    #+#             */
-/*   Updated: 2024/03/04 08:40:37 by nhan             ###   ########.fr       */
+/*   Updated: 2024/03/05 15:24:45 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ void	ft_display_ps(t_ps **ps)
 		return ;
 	ft_printf("Index = %d\t\t", (*ps)->index);
 	ft_printf("exp_index = %d\t\t", (*ps)->expected_index);
-	ft_printf("cost = %d\t\t", (*ps)->cost);
+	ft_printf("cost = %d  ", (*ps)->cost);
+	ft_printf("cost_push = %d\t", (*ps)->cost_push);
+	ft_printf("total cost = %d\t\t", (*ps)->cost_push + (*ps)->cost);
 	ft_printf("Value = %d\t\t", (*ps)->value);
 	ft_printf("|\033[0;31m P = %p\t\t", (*ps)->previous);
 	ft_printf("\033[0;32m A = %p\t\t", *ps);

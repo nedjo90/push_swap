@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 17:20:23 by nhan              #+#    #+#             */
-/*   Updated: 2024/03/04 15:48:30 by nhan             ###   ########.fr       */
+/*   Updated: 2024/03/05 12:51:32 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	ft_expected_index(t_ps **list, int *tab)
 			i++;
 		(*list)->expected_index = i;
 		(*list)->cost = 0;
+		(*list)->cost_push = 0;
 		(*list) = (*list)->next;
 	}
 	i = 0;
@@ -73,6 +74,7 @@ void	ft_expected_index(t_ps **list, int *tab)
 		i++;
 	(*list)->expected_index = i;
 	(*list)->cost = 0;
+	(*list)->cost_push = 0;
 	(*list) = (*list)->next;
 }
 

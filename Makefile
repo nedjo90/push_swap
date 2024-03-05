@@ -26,7 +26,12 @@ srcs/ft_rrb.c\
 srcs/ft_indexer.c\
 srcs/ft_sort.c\
 srcs/ft_display_controle.c\
-srcs/ft_cost.c
+srcs/ft_cost.c\
+srcs/ft_sort_three.c\
+srcs/ft_size_list.c\
+srcs/ft_is_sorted.c\
+srcs/ft_reverse_order.c\
+srcs/ft_is_reverse_sorted.c\
 
 LIBFT_INCLUDES=./libft/includes
 PUSH_SWAP_INCLUDES=./includes
@@ -47,7 +52,7 @@ $(NAME): $(OBJS)
 	mv libft/libft.a $(LIB)
 	$(AR) $(LIB) $^
 	$(CC) $(CFLAGS) push_swap.c -o $(NAME) -I $(PUSH_SWAP_INCLUDES) -I $(LIBFT_INCLUDES) $(LIB) -g
-	valgrind --leak-check=full --show-leak-kinds=all -s ./push_swap.out 4 5 7 9 6 8 3 2 10 1 
+	valgrind --leak-check=full --show-leak-kinds=all -s ./push_swap.out 4 10 7 3 6 8 9 5 2 1 
 # ./push_swap_tester.sh
 # leaks --atExit -- ./$(NAME) 1 2 3 4
 clean:
