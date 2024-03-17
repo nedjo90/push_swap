@@ -32,6 +32,8 @@ srcs/ft_size_list.c\
 srcs/ft_is_sorted.c\
 srcs/ft_reverse_order.c\
 srcs/ft_is_reverse_sorted.c\
+srcs/ft_cost_to_push.c\
+srcs/ft_complex_sort.c\
 
 LIBFT_INCLUDES=./libft/includes
 PUSH_SWAP_INCLUDES=./includes
