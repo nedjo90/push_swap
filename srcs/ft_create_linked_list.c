@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 13:28:15 by nhan              #+#    #+#             */
-/*   Updated: 2024/05/21 00:40:18 by nhan             ###   ########.fr       */
+/*   Updated: 2024/05/24 14:45:31 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static t_ps	*populate(int start, const int size, char **input)
 		return (list);
 	while (start < size)
 	{
+		if (ft_strlen(input[start]) > 11)
+			return (ft_free_list(list));
 		item = ft_create_item(ft_atol(input[start]));
 		list = ft_add_to_linked_list(list, item);
 		if (list == NULL)
